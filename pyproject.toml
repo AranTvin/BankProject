@@ -29,4 +29,3 @@ line-length = 119
 exclude = '.git'
 
 [tool.isort]
-line-length = 119
