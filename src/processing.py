@@ -1,1 +1,1 @@
-def filter_by_state(state="EXECUTED": str):
+def filter_by_state(operations_list, state="EXECUTED"):
