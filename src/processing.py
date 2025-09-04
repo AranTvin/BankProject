@@ -1,8 +1,13 @@
-def filter_by_state(operations_list: str, state: str="EXECUTED") -> list:
+from widget import get_date
+
+
+def filter_by_state(transactions: list, status: str = "EXECUTED") -> list:
     """Фильтрует операции по статусу"""
-    return [i for i in operations_list if i["state"] == state]
+    return [i for i in transactions if i["state"] == status]
 
 
-def sort_by_date(operations_list: list, reverse: bool=True) -> list:
+def sort_by_date(transactions: list, reverse: bool = True) -> list:
     """Сортирует операции по дате"""
-    return sorted(operations_list, key=lambda x: x["date"], reverse=reverse)
+    for i in transactions:
+        i["date"] = get_date(i["date"])
+    return sorted(transactions, key=lambda x: x["date"], reverse=reverse)
