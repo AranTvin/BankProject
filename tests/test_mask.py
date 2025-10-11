@@ -1,6 +1,6 @@
 import pytest
 
-from src.mask import get_mask_card_number, get_mask_account
+from src.mask import get_mask_account, get_mask_card_number
 
 
 @pytest.mark.parametrize("value, expected", [
@@ -9,7 +9,7 @@ from src.mask import get_mask_card_number, get_mask_account
     ("11111111аа111111", "Некорректный ввод"),
     ("342342", "Некорректный ввод")
 ])
-def test_get_mask_card_number(value, expected):
+def test_get_mask_card_number(value: str, expected: list) -> None:
     assert get_mask_card_number(value) == expected
 
 
@@ -19,6 +19,5 @@ def test_get_mask_card_number(value, expected):
     ("111111111111111", "Некорректный ввод"),
     ("43635635635ggg", "Некорректный ввод")
 ])
-def test_get_mask_account(value, expected):
+def test_get_mask_account(value: str, expected: list) -> None:
     assert get_mask_account(value) == expected
-
