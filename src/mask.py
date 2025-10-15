@@ -12,7 +12,7 @@ def get_mask_card_number(card_number: str) -> str:
 def get_mask_account(account: str) -> str:
     """Маскирует введенный пользователем номер банковского счета"""
     mask_account_list = ["**"]
-    if not account.isdigit() or len(account) != 20:
+    if not account.isdigit():
         return "Некорректный ввод"
     for i in account[-4:]:
         mask_account_list.append(i)
