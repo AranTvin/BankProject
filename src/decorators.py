@@ -1,7 +1,9 @@
 import datetime
 
 
-def log(filename=None):
+def log(filename):
+    """Декоратор. Отображает имя функции и статус при успешном выполнении;
+    отображает имя, тип ошибка и введенные данные при ошибке"""
     def inner_log(func):
         def wrapper(*args, **kwargs):
             try:
