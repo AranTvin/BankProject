@@ -2,7 +2,7 @@ from typing import Generator
 
 
 def filter_by_currency(transactions: list[dict], currency_code: str) -> Generator[dict | str]:
-    """Генератор. Возвращает из списка транзакций транзакцию с нужной ввалютой"""
+    """Генератор. Возвращает из списка транзакций транзакцию с заданной ввалютой"""
     no_information_message = "Нет информации о валюте"
     for transaction in transactions:
         if "operationAmount" not in transaction:
