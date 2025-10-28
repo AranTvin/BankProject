@@ -29,9 +29,3 @@ def log(filename):
                     print(error_message)
         return wrapper
     return inner_log
-
-@log(filename="")
-def myfunc(a, b):
-    return a + b
-
-myfunc(2, 1)
